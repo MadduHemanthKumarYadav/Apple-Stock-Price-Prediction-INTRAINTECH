@@ -14,7 +14,7 @@ response = requests.get(model_url)
 model_bytes = BytesIO(response.content)
 
 # Load the model
-with open(model_bytes, 'rb') as file:
+with open(model_bytes.name, 'rb') as file:
     model = p.load(file)
 
 stock_data = """Apple Inc. Stock Overview
