@@ -7,7 +7,7 @@ from datetime import datetime
 
 section = st.sidebar.radio("Select Section", ["Prediction", "Graphs", "Information", "About"])
 
-model_url = "https://github.com/MadduHemanthKumarYadav/Apple-Stock-Price-Prediction-INTRAINTECH/blob/main/random_forest_regressor_model.pkl"
+model_url = "https://raw.githubusercontent.com/MadduHemanthKumarYadav/Apple-Stock-Price-Prediction-INTRAINTECH/main/random_forest_regressor_model.pkl"
 
 response = requests.get(model_url)
 model_bytes = BytesIO(response.content)
