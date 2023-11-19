@@ -5,10 +5,9 @@ from io import BytesIO
 import pickle as p
 from datetime import datetime
 
-section = st.radio("Select Section", ["Prediction", "Graphs", "Information", "About"])
+section = st.sidebar.radio("Select Section", ["Prediction", "Graphs", "Information", "About"])
 
-
-model_url = "https://github.com/MadduHemanthKumarYadav/Apple-Stock-Price-Prediction-INTRAINTECH/blob/a8cd13eb9a36bd01c1684575439808871caaabe3/random_forest_regressor_model.pkl"
+model_url = "https://github.com/MadduHemanthKumarYadav/Apple-Stock-Price-Prediction-INTRAINTECH/raw/main/random_forest_regressor_model.pkl"
 
 response = requests.get(model_url)
 model_bytes = BytesIO(response.content)
