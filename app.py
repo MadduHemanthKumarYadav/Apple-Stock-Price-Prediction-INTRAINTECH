@@ -1,19 +1,12 @@
 import streamlit as st
 import pandas as pd
-import requests
-from io import BytesIO
-import pickle as p
+import joblib
 from datetime import datetime
 
 section = st.sidebar.radio("Select Section", ["Prediction", "Graphs", "Information", "About"])
 
-model_url = "https://raw.githubusercontent.com/MadduHemanthKumarYadav/Apple-Stock-Price-Prediction-INTRAINTECH/main/random_forest_regressor_model.pkl"
-
-response = requests.get(model_url)
-model_bytes = BytesIO(response.content)
-
-# Load the model
-model = p.load(model_bytes)
+model = joblib.load('random_forest_regressor_model.pkl')
+st.title('Apple Stock Price Prediction')
 
 stock_data = """Apple Inc. Stock Overview
 
